@@ -3,5 +3,4 @@ Hello world</description></item><item><title>Markdown Syntax Guide</title><link>
 Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description></item><item><title>Rich Content</title><link>https://sciabarra.net/post/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>https://sciabarra.net/post/rich-content/</guid><description>
 A brief description of Hugo Shortcodes</description></item><item><title>Placeholder Text</title><link>https://sciabarra.net/post/placeholder-text/</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>https://sciabarra.net/post/placeholder-text/</guid><description>
 Lorem Ipsum Dolor Si Amet</description></item><item><title>Math Typesetting</title><link>https://sciabarra.net/post/math-typesetting/</link><pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate><guid>https://sciabarra.net/post/math-typesetting/</guid><description>
-A brief guide to setup KaTeX</description></item><item><title>Emoji Support</title><link>https://sciabarra.net/post/emoji-support/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>https://sciabarra.net/post/emoji-support/</guid><description>
-Guide to emoji usage in Hugo</description></item></channel></rss>
+A brief guide to setup KaTeX</description></item></channel></rss>

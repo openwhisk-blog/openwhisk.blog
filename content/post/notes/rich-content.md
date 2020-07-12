@@ -7,6 +7,7 @@ tags = [
     "shortcodes",
     "privacy",
 ]
+draft = true
 +++
 
 Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes) for rich content, along with a [Privacy Config](https://gohugo.io/about/hugo-and-gdpr/) and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.
@@ -41,5 +42,5 @@ Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-manageme
 
 {{< vimeo_simple 48912912 >}}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2OTQzOTI5XX0=
+eyJoaXN0b3J5IjpbLTE2NTIzNzUyODddfQ==
 -->

@@ -7,7 +7,7 @@ tags = [
     "markdown",
     "text",
 ]
-draf
+draft = true
 +++
 
 Lorem est tota propiore conpellat pectoribus de
@@ -58,5 +58,5 @@ Propoetides **parte**.
 </style>
 {{< /css.inline >}}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDQxNjU0NjhdfQ==
+eyJoaXN0b3J5IjpbLTIwNzQ1MDU1NjddfQ==
 -->

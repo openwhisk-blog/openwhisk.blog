@@ -1,1 +1,1 @@
-# openwhisker.blog
+# openwhisk.blog

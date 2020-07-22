@@ -7,7 +7,7 @@ theme = "hugo-vitae"
 paginate = 5
 enableRobotsTXT = true
 
-copyright = "Disclaimer: Contents are my own and does not endorse views of the [Apache OpenWhisk project](http://openwhisk.apache.org) project<br>© Copyright [Michele Sciabarrà](https://www.linkedin.com/in/msciab) | Book [Learning Apache OpenWhisk](https://www.oreilly.com/library/view/learning-apache-openwhisk/9781492046158/) published by [O'Reilly](https://www.oreilly.com/)"
+copyright = "© Copyright [Michele Sciabarrà](https://www.linkedin.com/in/msciab) | Book [Learning Apache OpenWhisk](https://www.oreilly.com/library/view/learning-apache-openwhisk/9781492046158/) published by [O'Reilly](https://www.oreilly.com/)"
 
 pygmentsstyle = "colorful"
 pygmentscodefences = true

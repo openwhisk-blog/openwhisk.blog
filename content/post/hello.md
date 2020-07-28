@@ -13,16 +13,16 @@ description = "Zen and the art of developing in the cloud"
 "And why don't you just put your code in the cloud?"
 "Because I cannot just put my code in the cloud!"
 "Why not?"
-"Because the other masters tell me I have to put them in containers first, and then put the containers in Kubernetes, and then put Kubernetes in the cloud."
+"Because the other masters told me I have to put code in containers first, and then put the containers in Kubernetes, and then put Kubernetes in the cloud."
 "And why don't you put your programs directly in the containers that are already inside Kubnernetes that is already inside the cloud?"
-"But master is not possible!"
+"But Master, this is not possible!"
 "Have you researched well? Are you sure it's not possible?"
 "Maybe it's possible, but then why don't everyone do it?"
-"You should only ask yourself why you don't."
-And so it was that the pupil was enlightened.This is an example of what we can do!
+"You should only ask yourself why you don't do it."
+And so it was that the pupil was enlightened.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1MDQ0OTIyMywxNjM2MDM4NjMxLC0xMT
+eyJoaXN0b3J5IjpbMTEwODMwNzY2MiwxNjM2MDM4NjMxLC0xMT
 YwMDY1OTM1XX0=
 -->

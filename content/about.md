@@ -13,12 +13,13 @@ He is also involved in [Nimbella](https://nimbella.com) operations for Europe. N
 
 Furthermore he wrote for O'Reilly the book: Learning Apache OpenWhisk.
 
+[![](/img/laow.jpg)](https://www.amazon.com/Learning-Apache-OpenWhisk-Developing-Serverless/dp/1492046167/)
 ![](/img/static/)
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzMjAwMTQxOCwtMTMwNDU3ODcyNCwtMT
-QzNzY2OTI2OF19
+eyJoaXN0b3J5IjpbNzY2MDc5NjYsMTQzMjAwMTQxOCwtMTMwND
+U3ODcyNCwtMTQzNzY2OTI2OF19
 -->

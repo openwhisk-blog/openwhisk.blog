@@ -1,8 +1,8 @@
 +++
 author = "Michele Sciabarrà"
-title = "The dualism of easy versus hard development environments"
-date = "2020-07-28"
-description = "Zen and the art of developing in the cloud"
+title = "Kubernetes or OpenWhisk?"
+date = "2020-07-31"
+description = "The dualism of easy versus hard in development environments"
 +++
 
 Practically in every programming environment a dualism arises between the "difficult" approach, for real tough and the "easy" one, for mere mortals.
@@ -16,8 +16,6 @@ It didn't end there. In the web environment, dualism was between those who progr
 
 In my opinion, dualism is also being repeated today in the cloud environment, with the difference that it is now the "container" approach and the "serverless" approach. The real tough guys make their containers by hand, assemble them in Docker and deploy them in Kubernetes, creating their cloud. Mere mortals instead prefer a simplified approach, using Serverless and solutions like Apache OpenWhisk or Nimbella.
 
-
-> Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjg0MTI4MTksNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbLTIwOTEwMTExMjEsNzMwOTk4MTE2XX0=
 -->

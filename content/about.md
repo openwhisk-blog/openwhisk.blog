@@ -11,15 +11,15 @@ He is currently owner of [Sciabarra.com](https://sciabarra.com) a consultancy fo
 
 He is also involved in [Nimbella](https://nimbella.com) operations for Europe. Nimbella offers an advanced Serverless Platform based on Apache OpenWhisk.
 
-Furthermore he wrote for O'Reilly the book: Learning Apache OpenWhisk.
+Furthermore he wrote for O'Reilly the book: [Learning Apache OpenWhisk](https://www.amazon.com/Learning-Apache-OpenWhisk-Developing-Serverless/dp/1492046167/).
 
 [![](/img/laow.jpg)](https://www.amazon.com/Learning-Apache-OpenWhisk-Developing-Serverless/dp/1492046167/)
-![](/img/static/)
+
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzY2MDc5NjYsMTQzMjAwMTQxOCwtMTMwND
-U3ODcyNCwtMTQzNzY2OTI2OF19
+eyJoaXN0b3J5IjpbLTIwNjQ5Mzk2ODEsMTQzMjAwMTQxOCwtMT
+MwNDU3ODcyNCwtMTQzNzY2OTI2OF19
 -->

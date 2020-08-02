@@ -3,6 +3,7 @@ author = "Michele Sciabarrà"
 title = "The zen of OpenWhisk"
 date = "2020-07-28"
 description = "Zen and the art of developing in the cloud"
+tags = ["Linkedin"]
 +++
 
 "Zen Master, why is cloud programming so difficult?"

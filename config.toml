@@ -43,7 +43,7 @@ disqusShortname = ""
 	math = true
 
 	# Optional 80x80 avatar image.
-	avatar = "/img/pagurus.png"
+	avatar = "/img/pagurus-cartoon.png"
 
 	# Optional favicons for website
 	#favicon = true
@@ -83,11 +83,6 @@ weight = 3
 name = "Tags"
 url = "/tags"
 weight = 4
-
-[[menu.main]]
-name = "Categories"
-url = "/categories"
-weight = 5
 
 [[params.social]]
 name = "Github"

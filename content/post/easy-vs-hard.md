@@ -3,6 +3,7 @@ author = "Michele Sciabarrà"
 title = "The zen of OpenWhisk"
 date = "2020-07-31"
 description = "The dualism of easy versus hard in development environments"
+tags = ["Linkedin"]
 +++
 
 Practically in every programming environment a dualism arises between the "difficult" approach, for real tough and the "easy" one, for mere mortals.

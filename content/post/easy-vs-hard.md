@@ -1,6 +1,6 @@
 +++
 author = "Michele Sciabarrà"
-title = "Kubernetes or OpenWhisk?"
+title = "The zen of OpenWhisk"
 date = "2020-07-31"
 description = "The dualism of easy versus hard in development environments"
 +++
@@ -15,7 +15,3 @@ It then came up again in the DOS environment, with TurboC on one side and Clippe
 It didn't end there. In the web environment, dualism was between those who programmed in Java and those who programmed in PHP. The thing translates similarly in the mobile environment, between those who develop hybrid apps in Javascript and those who make them native, in Kotlin for Android and Swift for iOS.
 
 In my opinion, dualism is also being repeated today in the cloud environment, with the difference that it is now the "container" approach and the "serverless" approach. The real tough guys make their containers by hand, assemble them in Docker and deploy them in Kubernetes, creating their cloud. Mere mortals instead prefer a simplified approach, using Serverless and solutions like Apache OpenWhisk or Nimbella.
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTEwMTExMjEsNzMwOTk4MTE2XX0=
--->

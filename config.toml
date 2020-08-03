@@ -87,7 +87,7 @@ weight = 4
 [[params.social]]
 name = "Github"
 icon = "fab fa-github"
-url = "https://github.com/dataCobra/hugo-vitae"
+url = "https://github.com/openwhisk-blog"
 
 [[params.social]]
 name = "RSS"

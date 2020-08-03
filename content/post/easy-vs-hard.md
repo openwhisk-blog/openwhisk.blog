@@ -1,6 +1,6 @@
 +++
 author = "Michele Sciabarrà"
-title = "The zen of OpenWhisk"
+title = "Easy OpenWhisk versus hard Kubernetes"
 date = "2020-07-31"
 description = "The dualism of easy versus hard in development environments"
 tags = ["Linkedin"]

@@ -1,14 +1,12 @@
 +++
 author = "Michele Sciabarrà"
-title = ""
+title = "OpenWhisk as a Cloud Management System"
 date = "2020-08-05"
 description = "OpenWhisk is the cloud equivalent of CMS for the web"
 tags = [ "Linkedin" ]
-draft = true
 +++
 
-
-I remember that in 2001 I started working as a support for a product called FutureTense, which already had all the features of an advanced CMS back then.
+In 2001 I started supporting a product that already had all the features of an advanced CMS back then.
 
 It was the period when websites were made "by hand". The HTML pages were composed by hand and the files were uploaded via FTP where "web space" was provided. And the bookstores were full of books on HTML.
 
@@ -22,5 +20,5 @@ There are complete solutions, such as nimbella, and in a few years nobody will u
 rememberrəˈmembər
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwNDIwNDc0OV19
+eyJoaXN0b3J5IjpbMjA2NTA1MzU2XX0=
 -->

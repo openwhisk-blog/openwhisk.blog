@@ -34,7 +34,7 @@ disqusShortname = ""
 
 	# Add a subtitle to your website
 
-	subtitle = "A *unofficial* blog advocating [Apache OpenWhisk](http://openwhisk.apache.org/) and its many implementations."
+	subtitle = "A *unofficial* blog advocating [Apache OpenWhisk](http://openwhisk.apache.org/)."
 
 	# Activate to show authors on pages if available
 	#listAuthor = true

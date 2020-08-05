@@ -1,8 +1,8 @@
 +++
 author = "Michele Sciabarrà"
-title = "OpenWhisk is a CMS for the cloud"
+title = "OpenWhisk is like a CMS for the cloud"
 date = "2020-08-05"
-description = "OpenWhisk is the cloud equivalent of CMS for the web"
+description = "Once upon time people used FTP to upload web pages. The history repeat itself."
 tags = [ "Linkedin" ]
 +++
 
@@ -23,5 +23,5 @@ The lucky ones are those who instead avoid incomplete technology and wait for th
 
 There are already complete solutions. OpenWhisk is one of those.  In a few years nobody will use Kubernetes alone, but only as part of complete products that solve the whole problem of putting applications in the cloud and not just a small part
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDIzODgyNTQsMzA0Njg2MDc3XX0=
+eyJoaXN0b3J5IjpbMTcwNzMzMjc2NiwzMDQ2ODYwNzddfQ==
 -->

@@ -8,9 +8,11 @@ tags = [ "Linkedin" ]
 
 In 2001 I started supporting a product that already had all the features of an advanced CMS back then.
 
-It was the period when websites were "hand-written". You created HTML with an editor, frequently just a text editor, and uploaded via FTP in a "web space" offered by ISP. And the bookstores were full of books on HTML.
+It was the period when websites were "hand-written". You created web pages  with an editor, frequently just a text editor, and uploaded via FTP in a "web space" offered by ISP.  Bookstores had books on HTML everywhere.
 
-And I had in front of my nose a contraption that defined a content model, applied rendering logic, with incremental publishing tools. But there was no way to explain: learn THIS stuff, which is the future, not HTML ...
+At that time I was already working with a tool that defined a content model, applied rendering logic, offered a tool to incrementally publishing. 
+
+But there was no way to explain to people: forget  learn THIS stuff, which is the future, not HTML ...
 
 The problem is always repeated the same: in the beginning, enthusiasts want to learn everything. It was once HTML, today it is Docker. Back then the pages were uploaded via FTP, today they are put on Kubernetes. It seems that it is "the right way" and that the only way is "do-it-yourself".
 
@@ -20,5 +22,5 @@ There are complete solutions, such as nimbella, and in a few years nobody will u
 rememberrəˈmembər
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDA0NDcxNDY5XX0=
+eyJoaXN0b3J5IjpbLTE3OTA2NTIxMTRdfQ==
 -->

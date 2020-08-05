@@ -8,7 +8,7 @@ tags = [ "Linkedin" ]
 
 In 2001 I started supporting a product that already had all the features of an advanced CMS back then.
 
-It was the period when websites were made "by hand". The HTML pages were composed by hand and the files were uploaded via FTP where "web space" was provided. And the bookstores were full of books on HTML.
+It was the period when websites were "hand-written". You created HTML with an editor, frequently just a text editor, and uploaded via FTP in a "web space" offered by ISP. And the bookstores were full of books on HTML.
 
 And I had in front of my nose a contraption that defined a content model, applied rendering logic, with incremental publishing tools. But there was no way to explain: learn THIS stuff, which is the future, not HTML ...
 
@@ -20,5 +20,5 @@ There are complete solutions, such as nimbella, and in a few years nobody will u
 rememberrəˈmembər
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2NTA1MzU2XX0=
+eyJoaXN0b3J5IjpbNDA0NDcxNDY5XX0=
 -->

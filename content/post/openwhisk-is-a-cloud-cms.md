@@ -1,23 +1,26 @@
 +++
 author = "Michele Sciabarrà"
-title = "OpenWhisk is a cloud CMS"
+title = ""
 date = "2020-08-05"
-description = ""
+description = "OpenWhisk is the cloud equivalent of CMS for the web"
 tags = [ "Linkedin" ]
 draft = true
 +++
 
-Io mi ricordo che nel 2001 cominciai a lavorare come supporto di un prodotto che si chiamava FutureTense, che aveva già allora tutte le caratteristiche di un CMS avanzato.
 
-Era il periodo in cui i siti web si facevano "a mano". Si componevano le pagine HTML a mano e si caricavano i file via FTP dove veniva fornito "spazio web". E le librerie erano piene di libri sull'HTML .
+I remember that in 2001 I started working as a support for a product called FutureTense, which already had all the features of an advanced CMS back then.
 
-E io avevo davanti al mio naso un aggeggio che definiva un content model, applicava logiche di rendering, con strumenti pubblicazione incrementale. Ma non c'era verso di spiegare: imparate QUESTA roba, che è il futuro, non l'HTML...
+It was the period when websites were made "by hand". The HTML pages were composed by hand and the files were uploaded via FTP where "web space" was provided. And the bookstores were full of books on HTML.
 
-Il problema si ripete sempre uguale: all'inizio gli appassionati vogliono imparare tutto. Un tempo eral'HTML, oggi è Docker. Allora si caricavano le pagine via FTP, oggi si mettono su Kubernetes. Sembra che sia quella "la via giusta" e che l'unico modo sia il "fatelo-da-voi".
+And I had in front of my nose a contraption that defined a content model, applied rendering logic, with incremental publishing tools. But there was no way to explain: learn THIS stuff, which is the future, not HTML ...
 
-I fortunati sono quelli che invece evitano la tecnologia incompleta e vanno alla soluzione finale. Lo dico e lo ripeto: I container e Kubernetes sono solo una parte del cloud-native, NON sono la soluzione.
+The problem is always repeated the same: in the beginning, enthusiasts want to learn everything. It was once HTML, today it is Docker. Back then the pages were uploaded via FTP, today they are put on Kubernetes. It seems that it is "the right way" and that the only way is "do-it-yourself".
 
-Ci sono soluzioni complete, come nimbella, e tra qualche anno nessuno userà Kubernetes da solo ma solo come parte di prodotto completi che risolvono tutto il problema e non solo un pezzo.
+The lucky ones are those who instead avoid incomplete technology and go to the final solution. I say it again: the containers and Kubernetes are only a part of the cloud-native, they are NOT the solution.
+
+There are complete solutions, such as nimbella, and in a few years nobody will use Kubernetes alone but only as part of complete products that solve the whole problem and not just a piece.
+rememberrəˈmembər
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczOTU1ODY2OV19
+eyJoaXN0b3J5IjpbLTMwNDIwNDc0OV19
 -->

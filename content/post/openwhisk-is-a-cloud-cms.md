@@ -16,13 +16,13 @@ But there was no way to explain to people: forget HTML and use a tool like this,
 
 The problem repeat itself all the time. In the beginning, enthusiasts want to learn the foundations. It was once HTML, today it is Docker. 
 
-Back then, the pages were uploaded via FTP, today they are put on Kubernetes. It seems that it is "the right way" and that the only way is "do-it-yourself".
+Back then, pages were uploaded via FTP, today they put code on Kubernetes. It seems that it is "the right way" and that the only way is "do-it-yourself".
 
-The lucky ones are those who instead avoid incomplete technology and go to the final solution. I say it again: the containers and Kubernetes are only a part of the cloud-native, they are NOT the solution.
+The lucky ones are those who instead avoid incomplete technology and wait for the complete  solution. I want to say it again:  containers and Kubernetes are only a (small) part of the cloud-native approach; they are NOT the solution.
 
-There are complete solutions, such as nimbella, and in a few years nobody will use Kubernetes alone but only as part of complete products that solve the whole problem and not just a piece.
+There are complete solutions. OpenWhisk is one  such as nimbella, and in a few years nobody will use Kubernetes alone but only as part of complete products that solve the whole problem and not just a piece.
 rememberrəˈmembər
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzNjM5MTk4Ml19
+eyJoaXN0b3J5IjpbMTI0NDQ5NTg0M119
 -->

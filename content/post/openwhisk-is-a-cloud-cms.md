@@ -21,7 +21,7 @@ Back then, pages were uploaded via FTP, today they put code on Kubernetes. It se
 
 The lucky ones are those who instead avoid incomplete technology and wait for the complete solution. I want to say it again:  containers and Kubernetes are only a (small) part of the cloud-native approach; they are NOT the final solution.
 
-There are already complete solutions. OpenWhisk is one of those.  In a few years nobody will use Kubernetes alone, but only as part of complete products that solve the whole problem of putting applications in the cloud and not just a small part
+There are already complete solutions. OpenWhisk is one of those.  In a few years nobody will use Kubernetes alone, but only as part of complete products that solve the whole problem of putting applications in the cloud and not just a small part.
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTAxNTY0NTM4OSwzMDQ2ODYwNzddfQ==
 -->

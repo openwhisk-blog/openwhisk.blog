@@ -10,11 +10,13 @@ In 2001 I started supporting a product that already had all the features of an a
 
 It was the period when websites were "hand-written". You created web pages  with an editor, frequently just a text editor, and uploaded via FTP in a "web space" offered by ISP.  Bookstores had books on HTML everywhere.
 
-At that time I was already working with a tool that defined a content model, applied rendering logic, offered a tool to incrementally publishing. 
+At that time I was already working with a tool that worked like a modern CMS: it defined a content model, applied rendering logic, offered a tool to incrementally publishing. 
 
-But there was no way to explain to people: forget  learn THIS stuff, which is the future, not HTML ...
+But there was no way to explain to people: forget HTML and use a tool like this, instead.
 
-The problem is always repeated the same: in the beginning, enthusiasts want to learn everything. It was once HTML, today it is Docker. Back then the pages were uploaded via FTP, today they are put on Kubernetes. It seems that it is "the right way" and that the only way is "do-it-yourself".
+The problem repeat itself all the time. In the beginning, enthusiasts want to learn the foundations. It was once HTML, today it is Docker. 
+
+Back then, the pages were uploaded via FTP, today they are put on Kubernetes. It seems that it is "the right way" and that the only way is "do-it-yourself".
 
 The lucky ones are those who instead avoid incomplete technology and go to the final solution. I say it again: the containers and Kubernetes are only a part of the cloud-native, they are NOT the solution.
 
@@ -22,5 +24,5 @@ There are complete solutions, such as nimbella, and in a few years nobody will u
 rememberrəˈmembər
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTA2NTIxMTRdfQ==
+eyJoaXN0b3J5IjpbLTYzNjM5MTk4Ml19
 -->

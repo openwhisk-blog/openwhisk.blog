@@ -1,26 +1,26 @@
 +++
 author = "Michele Sciabarrà"
-title = ""
+title = "Comparing Kubernetes and OpenWhisk"
 date = "2020-08-17"
-description = ""
+description = "A few witty metaphors to really get the difference"
 tags = [ "Linkedin" ]
 
 +++
 
-"Ma io non riesco a capire, Kubernetes non è una piattaforma per microservizi?"
-"No, Kubernetes al massimo è un orchestratore di container. Ci sta una bella differenza."
-"Che differenza scusa?"
-"La differenza che c`è tra andare in un negozio e comprare una radio funzionante, oppure ordinare un kit elettronico per assemblarla, la radio."
-"Ma a Kubernetes hanno aggiunto anche Knative...."
-"Che non é un Faas ma un serverless workload manager."
-"E che vuol dire?"
-"È come se insieme al kit in scatola di montaggio, ti danno anche il saldatore."
-"E OpenFaas allora? Dicono che è semplice"
-"Appunto. Semplice. Molto semplice."
-"Ovvero?"
-"Se Nimbella è una radio, OpenFaas è solo un'antenna."
-"Ma non posso usare Lambda invece?"
-"È come andare tutti i giorni a un concerto, invece che comprare una radio."
+"But I can't understand, isn't Kubernetes a platform for microservices?"
+"No, Kubernetes at best is a container orchestrator. There is a huge difference."
+"What is the difference, sorry?"
+"Think about the difference between going to a shop and buying a working radio, or ordering an electronic kit to do build the radio by yourself ."
+"But Kubernetes also have Knative ...."
+"Which is not a F.A.A.S.  but a serverless workload manager."
+"And what it means?"
+"It is as if they bundle the do-it-yourself kit with the soldering iron."
+"What about OpenFaas then? They say it's simple"
+"Exactly. Simple. Very simple."
+"So what is the problem then?"
+"Well, if OpenWhisk is a radio, then OpenFaas is just an antenna."
+"But can't I use Lambda instead?"
+"It's like buying a subscription to a concert season, instead of buying a radio."
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTI0MDMzOTFdfQ==
+eyJoaXN0b3J5IjpbLTQ2ODAzNTU0NywtMTM1MjQwMzM5MV19
 -->

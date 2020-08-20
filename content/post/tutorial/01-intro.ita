@@ -1,0 +1,11 @@
+Come è possibile che Nimbella "scali" automaticamente e si distribuisca in cloud a partire da semplici funzioni, per di più scritte in linguaggi differenti?
+
+Il segreto sta nella sua architettura interna. Per l'utente finale, tutto quello che serve è inviare una funzione al "cloud". Internamente succedono molte cose. La funzione viene assemblata in un esecutore, detto runtime. Esistono runtime per Javascript, Python, JAva, Go e molti altri linguaggi di programmazione.
+
+A questo punto le richieste vengono eseguite da una struttura complessa. Un controller raccoglie le richieste e le invia a una coda di messaggi Kafka.
+
+Una serie di Invoker ascoltano le richieste in di Kafka e quello più libero di incarica di servirne una. Viene localizzato un runtime se disponibile, o ne viene creato uno all'occorrenza. E la funzione viene eseguita.
+
+Il risoultato viene raccolto in un database No-SQL e inviato indietro al controller per la risposta. E il ciclo ricomincia.
+
+

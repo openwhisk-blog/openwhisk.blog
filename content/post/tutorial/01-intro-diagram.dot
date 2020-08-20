@@ -1,0 +1,69 @@
+digraph Q {
+
+  node [shape=record];
+  subgraph {
+    rank=min  
+    Controller [shape=ellipse]
+  }
+     
+    Controller -> kafka1
+    Controller -> kafka2
+    Controller -> kafka3
+
+    subgraph cluster_kafka {
+      node[color=red,shpe=box3d];
+
+      kafka1 [shape=box3d]
+      kafka2 [shape=box3d]
+      kafka3 [shape=box3d]
+
+      label=<<table border="0" width="100%"><tr><td align="left">Kafka</td><td port="k0"></td><td></td></tr></table>>;
+
+      {rank=same kafka1 kafka2 kafka3}
+      kafka1 -> kafka2 -> kafka3 [color=grey arrowhead=none];
+    }
+  
+    subgraph invokers {
+      
+      //{rank=same invoker1 invoker2 invoker3}
+
+      invoker2 [ shape=invtrapezium]
+      invoker3 [ shape=invtrapezium]
+      
+      action1 [ shape=Mrecord]
+      action2 [ shape=Mrecord]
+      action3 [ shape=Mrecord]
+      action4 [ shape=Mrecord]
+      action5 [ shape=Mrecord]
+      action6 [ shape=Mrecord]
+
+      subgraph cluster_k1 {
+        {rank=min;invoker1}
+        invoker1 [ shape=invtrapezium]
+        kafka1 -> invoker1      
+        invoker1 -> action1
+        invoker1 -> action2
+      } 
+
+ subgraph cluster_k2 {
+      kafka2 -> invoker2
+      invoker2 -> action3
+      invoker2 -> action4
+ }
+
+subgraph cluster_k3 {
+      kafka3 -> invoker3
+      invoker3 -> action5
+      invoker3 -> action6
+}
+      CouchDB [ shape=cylinder]
+      
+      action1 -> CouchDB
+      action2 -> CouchDB
+      action3 -> CouchDB
+      action4 -> CouchDB
+      action5 -> CouchDB
+      action6 -> CouchDB
+    }
+    CouchDB -> Controller [label="response"]
+}

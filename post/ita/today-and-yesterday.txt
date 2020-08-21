@@ -1,0 +1,15 @@
+Nel 2018 scrivo un libro su Apache OpenWhisk e mi sento dire:
+
+“Si va bene OpenWhisk, un serverless ‘open source’ ahahahah. Ma dai. L’unica scelta seria è Amazon Lambda.”
+“OpenWhisk è assolutamente immaturo. Il futuro è Kubernetes e nessuno lo potrà togliere di mezzo.”
+“Cosa vorresti fare tu? Applicazioni Serverless? Ma non farmi ridere. Le uniche applicazioni che hanno senso sono applicazioni containerizzate."
+“Ai clienti non gliene frega niente del multicloud. I clienti hanno Amazon Web Services e sono felicissimi così”
+
+Nel 1998 scrissi un libro su Linux, Java e Programmazione Web e mi sentivo dire:
+
+“Si va bene Linux, un sistema operativo ‘free' ahahahahah. Ma dai. L’unica scelta seria è Windows NT.”
+“Java è assolutamente immaturo. Il futuro è Visual Basic e nessuno lo potrà togliere di mezzo”
+“Cosa vorresti fare te? Applicazioni Web? Ma non farmi ridere. Le uniche applicazioni che hanno senso sono le applicazioni GUI."
+“Ai clienti non gliene frega un accidente di niente del multipiattaforma. Hanno Windows e sono felicissimi così”
+
+Ho come un deja vù…

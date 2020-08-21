@@ -3,7 +3,7 @@ author = "Michele Sciabarrà"
 title = "The quest for the next big thing"
 date = "2020-08-03"
 description = "Where to invest in IT innovations today?"
-tags = [ "Linkedin" ]
+tags = [ "Advocate" ]
 +++
 
 Where to invest in IT innovations today? AI looks promising, but in the meanwhile, the cloud is booming. Why? Many reasons: from cost savings to the fact that the next-generation applications can only be "cloud-native". Even the smallest business may need tens of servers, and using the cloud is going to be the only practical option.

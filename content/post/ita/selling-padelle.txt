@@ -1,9 +1,5 @@
 
-+++
-draft = "true"
-+++
-
-soldi sono i venditori di padelle. È una vecchissima storia, e spiega tranquillamente perché ci sia tanta enfasi su Kubernetes.  
+Quando c'è una corsa all'oro chi fa i soldi sono i venditori di padelle. È una vecchissima storia, e spiega tranquillamente perché ci sia tanta enfasi su Kubernetes.  
   
 Tutti sono convinti che Kubernetes sia un modo di farsi la propria cloud privata per scrivere le app cloud-native. Che sia vero o no, non è importante.  
   

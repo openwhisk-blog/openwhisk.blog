@@ -3,7 +3,7 @@ author = "Michele Sciabarrà"
 title = "Simple, then Complex, then Just Right"
 date = "2020-08-21"
 description = "OpenWhisk as the next step in the road for the cloud-native"
-tags = [ "Linkedin" ]
+tags = [ "Advocate" ]
 +++
 
 

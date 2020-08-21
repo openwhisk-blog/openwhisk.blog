@@ -3,7 +3,7 @@ author = "Michele Sciabarrà"
 title = "Comparing Kubernetes and OpenWhisk"
 date = "2020-08-17"
 description = "A few witty metaphors to really get the difference"
-tags = [ "Linkedin" ]
+tags = [ "Advocate" ]
 +++
 
 "But I can't understand, isn't Kubernetes a platform for microservices?"

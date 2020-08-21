@@ -3,7 +3,7 @@ author = "Michele Sciabarrà"
 title = "Easy OpenWhisk versus hard Kubernetes"
 date = "2020-07-31"
 description = "The dualism of easy versus hard in development environments"
-tags = ["Linkedin"]
+tags = ["Advocate"]
 +++
 
 Practically in every programming environment a dualism arises between the "difficult" approach, for real tough and the "easy" one, for mere mortals.

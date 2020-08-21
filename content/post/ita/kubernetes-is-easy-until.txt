@@ -1,7 +1,3 @@
-+++
-draft = "true"
-+++
-
 Kubernetes é facile fino a che:  
   
 "Un nodo che muore e perdono tutti i dati perché non sapevano che i dati nel container erano effimeri.”  
@@ -15,8 +11,3 @@ Kubernetes é facile fino a che:
 “Pod critici che rimangono pending perché qualcuno ha deployato un pod più volte consumando tutta la cpu disponibile"  
   
 Ora, non é che queste cose non succedano. Ma se volete che queste cose succedano A NOI invece che a VOI, abbiamo creato Nimbella.  
-  
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjY4MDExODZdfQ==
--->

@@ -2,7 +2,7 @@
 author = "Michele Sciabarrà"
 title = "Picking the right level of abstraction"
 date = "2020-08-27"
-description = "OpenWhisk has the 'just right' level of commplexity for developing cloud native applications"
+description = "OpenWhisk has the 'just right' level of complexity for developing cloud native applications"
 tags = [ "Advocate" ]
 +++
 

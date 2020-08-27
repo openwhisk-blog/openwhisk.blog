@@ -1,0 +1,21 @@
+Una applicazione "cloud-native" tende ad avere una stuttura "verticale", 
+ovvero ad essere composta da tanti componenti indipendenti. 
+
+Questa natura consente di spezzare l'applicazione ed eseguirla in diversi contenitori 
+che i vari orchestratori poi possono piazzare in diversi nodi.
+
+Purtroppo moltissime applicazioni sono progettate per strati "orizzontali".
+Praticamente tutti i framework di sviluppo web impongono questo approccio, che producono monoliti.
+
+Ci si ritrova uno strato con l'accesso al database, uno per le logice di business e un altro per il routing.
+Ogni volta che si modifica una parte qualsiasi dell'applicazione occorre rideployarla per intero.
+
+Senza contare che spesso queste applicazioni mantengono un stato che ne limita fortemente la scalabilità.,
+
+Nimbella, fornendo un approccio nativo a microservizi indipendenti, 
+vi permette di creare le applicazioni "nativamente" cloud con estrema semplicità, 
+offrendovi l'approccio giusto senza trasformare tutti i vostre "Dev" in "DevOps".
+
+Verificatelo con un test drive: www.nimbella.com/signup
+
+

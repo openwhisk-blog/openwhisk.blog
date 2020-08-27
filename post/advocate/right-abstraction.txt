@@ -1,0 +1,9 @@
+Il problema del "giusto livello di astrazione" esiste da sempre in informatica. Ricordo che quando ho studiato "linguaggi di programmazione" all'università, il testo definiva l'informatica come "l'arte di costruire gerarchie di macchine astratte".
+
+Inizialmente non capivo, poi mi sono reso conto che è vero: il progresso informatico consiste nell'usare le macchine che esistono per costruire sopra altre macchine più semplici e più facili da utilizzare.
+
+Per esempio, partendo dal processore, sopra c'è il linguaggio di programmazione di sistema C o C++. Sopra abbiamo il lingaggio di programmazione evoluto come  Python o Java. Sopra ancora abbiamo dei framework.
+
+Questa stessa logica si applica al cloud: si utilizza lo strato pre-esistente per costruire ambienti più facili da programmare. Nel nostro caso abbiamo i cloud provider, molto complesso. Sopra, c'è Kubernetes. E sopra ancora Nimbella offre una piattaforma di facile uso per lo sviluppo in cloud.
+
+

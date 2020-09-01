@@ -4,6 +4,7 @@ title = "You need functions not containers"
 date = "2020-09-01"
 description = "The right level of abstraction is the function, not the container"
 tags = [ "Advocate" ]
+draft = true
 +++
 
 

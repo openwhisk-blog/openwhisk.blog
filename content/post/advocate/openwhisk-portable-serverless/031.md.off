@@ -1,0 +1,7 @@
+# IBM Cloud
+
+```
+ibmcloud login -u "$IBMUSER" -p "$IBMPASS"
+ibmcloud fn action update chess chess.zip --kind go:1.11
+ibmcloud fn action get chess --url
+```

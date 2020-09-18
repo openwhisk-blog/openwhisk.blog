@@ -1,0 +1,9 @@
+# Building our whisk chess
+
+```
+git clone https://github.com/openwhisk-blog/whisk-chess
+cd whisk-chess
+make
+wsk action update chess chess.zip --kind go:1.11 --web true
+wsk action get chess --url
+```

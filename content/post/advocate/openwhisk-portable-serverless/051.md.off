@@ -1,0 +1,7 @@
+# Build the EKS cluster
+
+```
+eksctl create cluster --name openwhisk
+eksctl create nodegroup --cluster openwhisk --node-labels openwhisk-role=invoker
+helm install --set whisk.ingress.type=LoadBalancer openwhisk ./openwhisk
+```

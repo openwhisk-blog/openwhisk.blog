@@ -3,7 +3,7 @@ author = "Michele Sciabarrà"
 title = "OpenWhisk is like a CMS for the cloud"
 date = "2020-08-05"
 description = "Once upon time people used FTP to upload web pages. History repeats itself."
-tags = [ "Advocate" ]
+tags = ["Advocate"]
 +++
 
 

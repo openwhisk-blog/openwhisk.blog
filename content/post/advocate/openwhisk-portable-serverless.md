@@ -5,6 +5,7 @@ description = "OpenWhisk is a truly portable and multiplatform Serverless engine
 date = "2020-09-18"
 tags = [ "Advocate" ]
 hidden = true
+aliases =  [ "/portability/" ]
 +++
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/02Xezhf_j4U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

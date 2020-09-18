@@ -1,0 +1,9 @@
+# Standalone (local) OpenWhisk
+
+- Prerequisite: `docker` and `wsk`
+
+```
+bash <(curl -sL https://s.apache.org/openwhisk.sh)
+AUTH=$(docker exec openwhisk wsk property get --auth | awk '{ print $3}')
+wsk property set --auth $AUTH --apihost http://localhost:3233
+```

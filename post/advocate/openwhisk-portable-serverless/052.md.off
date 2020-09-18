@@ -1,0 +1,10 @@
+# Connect (insecurely)
+
+```
+cd whisk-chess
+APIHOST=$(kubectl  get svc | awk '/openwhisk-nginx/ { print $4}')
+AUTH=$(cat openwhisk/values.yaml |  awk '/guest/ { print $2}' | tr -d '"')
+wsk property set --apihost http://$APIHOST --auth $AUTH
+wsk action create chess chess.zip --web true --kind go:1.11
+wsk action get chess --url
+```

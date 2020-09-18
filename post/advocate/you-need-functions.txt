@@ -1,0 +1,11 @@
+Ragazzi non ci siamo. Io sto in questi giorni parlando con un sacco di gente e sento sempre la stessa ansia dalla controparte: “dobbiamo andare in cloud”.
+
+Il fatto che si scrive “cloud” e si legge “calcolo distribuito”. Il che significa applicazioni che sono a loro agio in network di servers che si ingrandisce a richiesta. E quante applicazioni sono già così? Ovviamente nessuna.
+
+Allora che si fa? Da un lato si affida ai sistemisti, che prontamente si ribattezzano DevOps e si affrettano a certificarsi AWS Associate il compito di preparare “l’architettura distribuita”. Che è pressappoco come chiedere a una persona che di mestiere ha sempre fatto il macellaio, di improvvisarsi cardio chirurgo.
+
+E dall’altra si affida ai programmatori di imparare containerizzazione e orchestrazione e mettere le loro app “in Kubernetes”. Che è pressappoco come chiedere a una persona che mi mestiere fa l’architetto (edile) di improvvisarsi muratore e imbianchino.
+
+Alt. Stop. Calma. Respirate. Vi serve il GIUSTO livello di astrazione. E non è quella vm strizzata che è il container! È la funzione! Un pezzo di codice componente di applicazioni distribuite.
+
+Non vi serve Kubernetes. Vi servono strumenti come OpenWhisk (o Nimbella). E ora pace. Non è per ora. Tornate pure ai vostri descrittori YAML.

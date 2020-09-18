@@ -3,7 +3,7 @@ digraph Q {
   node [shape=record];
   subgraph {
     rank=min  
-    Controller [shape=ellipse]
+    Controller [shape=ellipse, color = green, style=filled]
   }
      
     Controller -> kafka1
@@ -13,9 +13,9 @@ digraph Q {
     subgraph cluster_kafka {
       node[color=red,shpe=box3d];
 
-      kafka1 [shape=box3d]
-      kafka2 [shape=box3d]
-      kafka3 [shape=box3d]
+      kafka1 [shape=box3d, color=yellow, style=filled]
+      kafka2 [shape=box3d, color=yellow, style=filled]
+      kafka3 [shape=box3d, color=yellow, style=filled]
 
       label=<<table border="0" width="100%"><tr><td align="left">Kafka</td><td port="k0"></td><td></td></tr></table>>;
 
@@ -27,15 +27,16 @@ digraph Q {
       
       //{rank=same invoker1 invoker2 invoker3}
 
-      invoker2 [ shape=invtrapezium]
-      invoker3 [ shape=invtrapezium]
+      invoker1 [ shape=invtrapezium, color=cyan, style=filled]
+      invoker2 [ shape=invtrapezium, color=cyan, style=filled]
+      invoker3 [ shape=invtrapezium color=cyan, style=filled]
       
-      action1 [ shape=Mrecord]
-      action2 [ shape=Mrecord]
-      action3 [ shape=Mrecord]
-      action4 [ shape=Mrecord]
-      action5 [ shape=Mrecord]
-      action6 [ shape=Mrecord]
+      action1 [ shape=Mrecord, color=salmon, style=filled]
+      action2 [ shape=Mrecord, color=burlywood2, style=filled]
+      action3 [ shape=Mrecord, color=chocolate, style=filled]
+      action4 [ shape=Mrecord, color=blanchedalmond, style=filled]
+      action5 [ shape=Mrecord, color=darkorange1, style=filled]
+      action6 [ shape=Mrecord, color=goldenrod3, style=filled]
 
       subgraph cluster_k1 {
         {rank=min;invoker1}
@@ -56,7 +57,7 @@ subgraph cluster_k3 {
       invoker3 -> action5
       invoker3 -> action6
 }
-      CouchDB [ shape=cylinder]
+      CouchDB [ shape=cylinder, style=filled, color=red]
       
       action1 -> CouchDB
       action2 -> CouchDB

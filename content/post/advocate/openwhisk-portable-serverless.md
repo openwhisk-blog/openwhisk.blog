@@ -1,7 +1,7 @@
 +++
 author = "Michele Sciabarrà"
 title = "Apache OpenWhisk is a truly multi-cloud Serverless Platform"
-description = "OpenWhisk is a truly portable and multiplatform Serverless engine and it is available now on all the major clouds from multiple commercial vendors."
+description = "OpenWhisk is a truly portable and multi-platform Serverless engine and it is available now on all the major clouds from multiple commercial vendors."
 date = "2020-09-18"
 tags = [ "Advocate" ]
 hidden = true
@@ -20,12 +20,12 @@ In this article I am going to show that OpenWhisk is a truly portable serverless
 
 To prove my point, I wrote an open source serverless application and run it on all the OpenWhisk vendors I got access to. I also created a custom Kubernetes cluster, installed OpenWhisk in it to run my application.
 
- The application is a chess engine, written in the Go programmaing language, that includes backend and frontend; using it you can to play chess using a web interface, while the opponent is an artificial intelligence running as a serveless function in OpenWhisk.
+ The application is a chess engine, written in the Go programming language, that includes backend and frontend; using it you can to play chess using a web interface, while the opponent is an artificial intelligence running as a serverless function in OpenWhisk.
 
 
 # Local Deploy
 
-For testing and development you can use the Standalone OpenWhisk. It is a single node installation that can run in your machine and only requires [`docker`](https://docker.com) to run. You also need to download the [OpenWhisk cli tool `wsk`](https://github.com/apache/openwhisk-cli/releases/tag/1.0.0) for your operating system in order to interact with OpenWhisk.
+For testing and development you can use the Standalone OpenWhisk. It is a single node installation that can run in your machine and only requires [`docker`](https://docker.com) to run. You also need to download the [OpenWhisk CLI tool `wsk`](https://github.com/apache/openwhisk-cli/releases/tag/1.0.0) for your operating system in order to interact with OpenWhisk.
 
 Once prerequisites are satisfied, you can start a local OpenWhisk with the following command:
 
@@ -48,7 +48,7 @@ wsk property set --auth $AUTH --apihost http://localhost:3233
 
 Now  let's build our chess engine and use the local OpenWhisk  to test it locally. Source code of the chess engine [is available on GitHub](https://github.com/openwhisk-blog/whisk-chess).
 
-Code is based on a freely available chess engine written in Go, [CounterGo](https://github.com/ChizhovVadim/CounterGo/pulls). I adapted it to run as a stateless serveless action, and I added a front-end in javascript,  using the libraries [Chessboardjs](https://chessboardjs.com) and [chess.js](https://github.com/jhlywa/chess.js).
+Code is based on a freely available chess engine written in Go, [CounterGo](https://github.com/ChizhovVadim/CounterGo/pulls). I adapted it to run as a stateless serverless action, and I added a front-end in JavaScript,  using the libraries [Chessboardjs](https://chessboardjs.com) and [chess.js](https://github.com/jhlywa/chess.js).
 
 In order to build the action, you need common tools like `git`, `make` and `docker`. Once you got them you can download and build the sources with the commands:
 
@@ -58,7 +58,7 @@ cd whisk-chess
 make
 ```
 
-Note that you do not need a Go compiler to build the action, just Docker, as you can compile the action using the runtime itself. The result is the file `chess.zip` containg a precompiled Go action ready to be deployed.
+Note that you do not need a Go compiler to build the action, just Docker, as you can compile the action using the runtime itself. The result is the file `chess.zip` containing a pre-compiled Go action ready to be deployed.
 
 
 Once you have the action, you use the following command to deploy it in OpenWhisk:
@@ -99,13 +99,13 @@ nim action get chess --url
 
 # IBM Cloud
 
-The IBM cloud was the original cloud offering OpennWhisk.
+The IBM cloud was the original cloud offering OpenWhisk.
 
 ![IBM](030.png)
 
-You need to download anmd install the `ibmcloud` cli in order to deploy actions in it. There are also some requirements like downloading a plugin and to target a space; all the steps are explained in their website. 
+You need to download and install the `ibmcloud` CLI in order to deploy actions in it. There are also some requirements like downloading a plugin and to target a space; all the steps are explained in their website.
 
-They have a generous free offering for run ning functions. You just need to register to the website to use a very large number of function invocations for free. 
+They have a generous free offering for running functions. You just need to register to the website to use a very large number of function invocations for free.
 
 Once you downloaded the tool, the commands to deploy the chess engine and get an URL to run the action are:
 
@@ -123,7 +123,7 @@ Naver is a Korean company, owner of the main search engine in the Korean languag
 
 ![Naver](040.png)
 
-Currently Naver does not offer a cli to deploy actions, however I was told a cli is actually under development. For now I deployed the chess action using their web interface.
+Currently Naver does not offer a CLI to deploy actions, however I was told a CLI is actually under development. For now I deployed the chess action using their web interface.
 
 ![Naver Deploy](041.png)
 
@@ -135,7 +135,7 @@ Adobe has a serverless offer based on OpenWhisk, too. It is called the Adobe I/O
 
 ![Adobe IO](045.png)
 
-Adobe currently supports only Nodejs based runtimes, so if you pick them as your serverless function providers you have to write your serverless functions in Javascript. However being based on OpenWhisk, it runs also our chess engine. 
+Adobe currently supports only Node's based runtimes, so if you pick them as your serverless function providers you have to write your serverless functions in JavaScript. However being based on OpenWhisk, it runs also our chess engine.
 
 I had to ask to Adobe staff to deploy my action for demonstration purposes, and they kindly agreed.
 
@@ -147,7 +147,7 @@ Finally, you can run OpenWhisk in any cluster supporting Kubernetes. For this pu
 
 ![AWS](053.png)
 
-Before all you need to install and configure an AWS account. I refer to AWS documentation for informations how to do this.
+Before all you need to install and configure an AWS account. I refer to AWS documentation for information how to do this.
 
 Once you have an account I installed the  [`eksctl`](https://eksctl.io/) tool that makes easy to create a Kubernetes cluster on  AWS. 
 
@@ -158,17 +158,17 @@ git clone https://github.com/apache/openwhisk-deploy-kube
 cd openwhisk-deploy-kube/helm
 ```
 
-Once everything is ready your can create a Kubewernetees cluster and install OpenWhisk with just 3 commands:
+Once everything is ready your can create a Kubernetes cluster and install OpenWhisk with just 3 commands:
 
 ```
 eksctl create cluster --name openwhisk
 eksctl create nodegroup --cluster openwhisk --node-labels openwhisk-role=invoker
-helm install --set whisk.ingress.type=LoadBalancer openwhisk ./openwhis
+helm install --set whisk.ingress.type=LoadBalancer openwhisk ./openwhisk
 ```
 
 The cluster creation will take a while. Once it is completed you will get your private OpenWhisk running in AWS, and you can deploy your chess action  in it. 
 
-For vanilla OpenWhisk you have to use the `wsk` command to deploy in OpenWhisk. You have aloo to retrieve the location of the OpenWhisk apache entry point, and the authorization key and pass them to the `wsk` tool. The required commands are:
+For vanilla OpenWhisk you have to use the `wsk` command to deploy in OpenWhisk. You have to retrieve the location of the Apache OpenWhisk entry point, and the authorization key and pass them to the `wsk` tool. The required commands are:
 
 ```
 cd whisk-chess
@@ -177,11 +177,11 @@ AUTH=$(cat openwhisk/values.yaml |  awk '/guest/ { print $2}' | tr -d '"')
 wsk property set --apihost http://$APIHOST --auth $AUTH
 ```
 
-It is important to note that we configured  an insecure setup because we are accessing to OpenWhisk over the unencrypted http protocol. 
+It is important to note that we configured  an insecure setup because we are accessing to OpenWhisk over the unencrypted HTTP protocol.
 
-In a real world setup you will need additional steps to setup an https endpoint with a certificate. There are detailed informations in the [helm chart github repository](https://github.com/apache/openwhisk-deploy-kuhttps://github.com/apache/openwhisk-deploy-ku).
+In a real world setup you will need additional steps to setup an HTTPS endpoint with a certificate. There are detailed information in the [helm chart GitHub repository](https://github.com/apache/openwhisk-deploy-kuhttps://github.com/apache/openwhisk-deploy-ku).
 
-Once you retrieved the informations you can deploy your chess app, and get the URL.
+Once you retrieved the information you can deploy your chess app, and get the URL.
 
 ```
 wsk action create chess chess.zip --web true --kind go:1.11
@@ -189,6 +189,3 @@ wsk action get chess --url
 ```
 
 I cannot provide an URL as I a destroyed the cluster after the testing, however you can see the result in the image at the beginning of the paragraph.
-
-
-

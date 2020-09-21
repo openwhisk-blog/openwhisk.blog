@@ -87,10 +87,10 @@ I think it is  appropriate to say that I work for Nimbella, but I am trying to b
 
 ![Nimbella](020.png)
 
-Nimbella uses its own tool for deployment, [`nim`, that was recently opensourced](https://github.com/nimbella/nimbella-cli/). You need to register to their service and you will receive an authentication token that you can use to login in it. Once you are logged in, you can deploy our chess action and get an URL for it. 
+Nimbella uses its own CLI called `nim` for deployment. The Nimbella CLI was recently open sourced](https://github.com/nimbella/nimbella-cli/). You need to sign-up and login to use their service. Once you are logged in, you can deploy our chess action and get an URL for it. The `nim login` command conveniently permits sign-up.
 
 ```
-nim auth login "$NIMTOKEN"
+nim login
 nim action update chess chess.zip --kind go:1.12 --web true
 nim action get chess --url
 ```

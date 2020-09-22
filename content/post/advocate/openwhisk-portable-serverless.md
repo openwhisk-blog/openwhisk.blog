@@ -1,7 +1,7 @@
 +++
 author = "Michele Sciabarrà"
 title = "Apache OpenWhisk is a truly portable Serverless Platform"
-description = "Want to see a serverless action playing chess running on multiple public clouds from multiple vendors, such as Adobe IO Runtime, IBM Cloud, Naver, and Nimbella? Read on..."
+description = "Want to see a serverless action playing chess running on multiple public clouds from multiple vendors, such as Adobe I/O Runtime, IBM Cloud, Naver, and Nimbella? Read on..."
 date = "2020-09-18"
 tags = [ "Advocate" ]
 aliases =  [ "/portability/" ]
@@ -11,7 +11,7 @@ aliases =  [ "/portability/" ]
 
 Apache OpenWhisk is a truly portable and multiplatform Serverless engine and it is available now on all the major clouds from multiple commercial vendors. Here is a Chess Engine running on:
 
-- [Adobe IO](https://whisk-chess.adobeioruntime.net/api/v1/web/default/chess)
+- [Adobe I/O](https://whisk-chess.adobeioruntime.net/api/v1/web/default/chess)
 - [IBM Cloud](https://eu-de.functions.appdomain.cloud/api/v1/web/a1d40f6b-e5e3-4f07-8f92-77b525392253/default/chess)
 - [Naver](https://wka9bi13u3.apigw.ntruss.com/chess/chess/ZC2o7bFh0x/http)
 - [Nimbella](https://apigcp.nimbella.io/api/v1/web/msciabar-zc3thebgxgh/default/chess)

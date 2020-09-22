@@ -143,15 +143,15 @@ Currently Naver does not offer a CLI to deploy actions, however I was told a CLI
 
 [Follow this link to play Chess on Naver.](https://wka9bi13u3.apigw.ntruss.com/chess/chess/ZC2o7bFh0x/http)
 
-# Adobe IO
+# Adobe I/O
 
 Adobe has a serverless offering based on OpenWhisk too. It is called the [Adobe I/O Runtime](https://www.adobe.io/apis/experienceplatform/runtime.html).
 
-![Adobe IO](045.png)
+![Adobe I/O](045.png)
 
 Adobe I/O Runtime currently supports only Node.js based runtimes, so if you pick them as your serverless function providers you have to write your serverless functions in JavaScript. However being based on OpenWhisk, it is possible to use other runtimes by request, and so we can also run our chess engine. I thank the team at Adobe for their kind support and help in deploying my action for demonstration purposes.
 
-[Follow this link to play Chess on AdobeIO.](https://whisk-chess.adobeioruntime.net/api/v1/web/default/chess)
+[Follow this link to play Chess on Adobe I/O.](https://whisk-chess.adobeioruntime.net/api/v1/web/default/chess)
 
 # Custom on AWS
 

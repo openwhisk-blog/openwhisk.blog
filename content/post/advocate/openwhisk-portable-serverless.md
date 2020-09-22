@@ -1,16 +1,28 @@
 +++
 author = "Michele Sciabarrà"
-title = "Apache OpenWhisk is a truly multi-cloud Serverless Platform"
-description = "OpenWhisk is a truly portable and multiplatform Serverless engine and it is available now on all the major clouds from multiple commercial vendors."
+title = "Apache OpenWhisk is a truly portable Serverless Platform"
+description = "Want to see a serverless action playing chess running on multiple public clouds from multiple vendors, such as Adobe IO Runtime, IBM Cloud, Naver, and Nimbella? Read on..."
 date = "2020-09-18"
 tags = [ "Advocate" ]
-hidden = true
 aliases =  [ "/portability/" ]
 +++
+
+# TL;DR 
+
+Apache OpenWhisk is a truly portable and multiplatform Serverless engine and it is available now on all the major clouds from multiple commercial vendors. Here is a Chess Engine running on:
+
+- [Adobe IO](https://whisk-chess.adobeioruntime.net/api/v1/web/default/chess)
+- [IBM Cloud](https://eu-de.functions.appdomain.cloud/api/v1/web/a1d40f6b-e5e3-4f07-8f92-77b525392253/default/chess)
+- [Naver](https://wka9bi13u3.apigw.ntruss.com/chess/chess/ZC2o7bFh0x/http)
+- [Nimbella](https://apigcp.nimbella.io/api/v1/web/msciabar-zc3thebgxgh/default/chess)
+
+And see below for instructions how to run it also locally and in any Kubernetes cluster, for example AWS EKS...
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/02Xezhf_j4U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {{< youtube 02Xezhf_j4U  >}}
+
+# OpenWhisk?
 
 Apache OpenWhisk is a Serverless Cloud Platform, developed as an open source project at the Apache Software Foundations.  It is similar to Amazon Lambda, Google Functions or Azure Functions. The main difference is that it is an Open Source project and that is offered by multiple commercial vendors.
 
@@ -21,7 +33,6 @@ In this article I am going to show that OpenWhisk is a truly portable serverless
 To prove my point, I wrote an open source serverless application and run it on all the OpenWhisk vendors I got access to. I also created a custom Kubernetes cluster, installed OpenWhisk in it to run my application.
 
  The application is a chess engine, written in the Go programmaing language, that includes backend and frontend; using it you can to play chess using a web interface, while the opponent is an artificial intelligence running as a serveless function in OpenWhisk.
-
 
 # Local Deploy
 

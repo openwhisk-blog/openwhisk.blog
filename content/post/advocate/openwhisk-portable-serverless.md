@@ -191,7 +191,7 @@ nim auth login --apihost http://$APIHOST --auth $AUTH
 
 It is important to note that we configured an insecure setup because we are accessing OpenWhisk over the unencrypted HTTP protocol.
 
-In a real world setup you will need additional steps to setup an HTTPS endpoint with a certificate. You will find relevant details in the [helm chart GitHub repository](https://github.com/apache/openwhisk-deploy-kuhttps://github.com/apache/openwhisk-deploy-ku).
+In a real world setup you will need additional steps to setup an HTTPS endpoint with a certificate. You will find relevant details in the [helm chart GitHub repository](https://github.com/apache/openwhisk-deploy-kube).
 
 Once you retrieved the API host and authentication key, you can deploy your chess app, and get the URL.
 

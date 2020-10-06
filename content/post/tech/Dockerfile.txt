@@ -1,0 +1,7 @@
+FROM ubuntu
+LABEL maintainer="giovanni.gadaleta.61@gmail.com"
+ENV REFRESHED_AT 2020-09-29
+RUN apt-get update && apt-get install -y wget ;\
+    mkdir covid  ;\
+    cd covid ;\ 
+    wget https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv

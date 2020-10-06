@@ -97,7 +97,7 @@ In the same screen showing the publishing status of your web site, you can scrol
 
 Since everything is source code I mention also how to edit and customise the application. If you click on the link `GitHub` as shown in *Figure 5* it will bring you to the GitHub repository. Here you can see URSs to  download the source code with git. Using the command:
 
-````
+```
 git clone <your-repository-url>
 ```
 

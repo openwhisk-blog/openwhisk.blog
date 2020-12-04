@@ -1,0 +1,2 @@
+rm -Rvf python
+rm hellogo.zip exec exec.env

@@ -4,7 +4,7 @@ title = "Nimbella and Netflify Integration"
 date = "2020-10-06"
 description = "Integrating Nimbella with the larger Serverless ecosystem"
 tags = [ "Nimbella" ]
-hidden = true
+hidden = false
 +++
 
 The serverless approach is evolving towards an ecosystem of interconnected services in the cloud, where each service does its part at best and cooperate smoothly with other services.

@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /mnt/src
+exec "$(which python)" /mnt/src/exec__.py "$@"

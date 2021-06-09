@@ -1,0 +1,15 @@
+# What happens really
+
+docker run --name demo --rm -p 8080:8080 -d openwhisk/action-nodejs-v12
+
+JSON='{"value": {"code": "function main(a) { return {body: \"Hello\"} }", "main":"main"}}'
+echo $JSON | jq .
+
+curl -X POST \
+     -H 'Content-Type: application/json'\
+     -d "$JSON" \
+http://localhost:8080/init
+
+curl -X POST -d '{}' http://localhost:8080/run
+
+docker kill demo

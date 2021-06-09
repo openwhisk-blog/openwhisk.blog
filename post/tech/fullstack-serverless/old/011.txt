@@ -1,0 +1,9 @@
+
+git init
+echo "node_modules/" >.gitignore
+git add .gitignore web packages
+git commit -m "first commit"
+git branch -M master
+git remote add origin $GHSC/openwhisk-blog/whisk-fullstack.git
+git push -u origin master
+                

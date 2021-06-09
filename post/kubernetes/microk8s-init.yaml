@@ -1,0 +1,38 @@
+#cloud-config
+runcmd:
+ - |
+   # change here
+   NET=10.0.0 # internal subnet of virtual machines
+   PASS="super-secret-password" # a secret password to generate tokens
+   # end changes
+   IP="$(hostname | sed -e 's/[^0-9]*//')"
+   IF="$(ip -o -4 route show to default | awk '{print $5}')"
+   OUT="$(ip -o -4 route show to default | awk '{print $9}')"
+   # configure static ip - comment this if aassigned automatically
+   printf "network:\n version: 2\n renderer: networkd\n ethernets:\n  $IF:\n    addresses:\n     - $NET.$IP/24" | tee /etc/netplan/90-static.yaml
+   netplan apply
+   # install and start microk8s
+   snap install microk8s --classic
+   ufw allow in on cni0 && sudo ufw allow out on cni0
+   ufw default allow routed
+   microk8s start
+   microk8s status  
+   if test "$IP" = "1"
+   then microk8s enable dns storage ingress        
+        for I in $(seq 1 9)
+        do TOKEN=$(echo "$I$PASS" | sha1sum | awk '{ print $1}')
+           microk8s add-node -t $TOKEN           
+        done 
+        microk8s config | sed -e "s|server: https://$NET.1:16443|server: https://$OUT:16443|" >/etc/kubeconfig
+   else 
+        TOKEN="$(echo "$IP$PASS" | sha1sum | awk '{ print $1}')"        
+        while ! microk8s join "$NET.1:25000/$TOKEN"
+        do echo retrying to join... ; sleep 10
+        done
+   fi
+apt_update: true
+apt_upgrade: true
+package_update: true
+package_upgrade: true
+package_reboot_if_required: false
+

@@ -1,0 +1,23 @@
+# Compiler Script in Python
+
+## Prepariamo il workspace
+
+cd demo
+mkdir -p python/src python/bin
+cp hello.py python/src/exec
+
+## Compiliamo dentro 
+
+docker run -ti --entrypoint=/bin/bash \
+-v $PWD/python:/mnt openwhisk/actionloop-python-v3.7
+
+cd /mnt
+/bin/compile
+/bin/compile main src bin
+
+## Esecuzione 
+
+cd bin
+./exec 3>&1
+{"value":{"name":"Mike"}}
+

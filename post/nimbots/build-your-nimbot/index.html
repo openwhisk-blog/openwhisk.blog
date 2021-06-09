@@ -1,0 +1,119 @@
+<!doctype html><html lang=en><head><script async src="https://www.googletagmanager.com/gtag/js?id=UA-178666696-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-178666696-1');</script><meta name=generator content="Hugo 0.71.1"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=author content="Michele Sciabarrà"><meta name=keywords content="Tech"><meta name=description content="A tutorial how to build a Nimbot, an OpenWhisk Serverless Action to control a robot."><meta property="og:title" content="Nimbots: serverless virtual robots"><meta property="og:description" content="A tutorial how to build a Nimbot, an OpenWhisk Serverless Action to control a robot."><meta property="og:type" content="article"><meta property="og:url" content="https://openwhisk.blog/post/nimbots/build-your-nimbot/"><meta property="article:published_time" content="2020-12-12T00:00:00+00:00"><meta property="article:modified_time" content="2020-12-12T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Nimbots: serverless virtual robots"><meta name=twitter:description content="A tutorial how to build a Nimbot, an OpenWhisk Serverless Action to control a robot."><link rel=stylesheet type=text/css media=screen href=https://openwhisk.blog/css/normalize.css><link rel=stylesheet type=text/css media=screen href=https://openwhisk.blog/css/main.css><link rel=stylesheet type=text/css media=screen href=https://openwhisk.blog/css/all.css><link rel=stylesheet href=https://openwhisk.blog/css/katex.min.css crossorigin=anonymous><script defer src=https://openwhisk.blog/js/katex.min.js integrity=sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz crossorigin=anonymous></script><script defer src=https://openwhisk.blog/js/auto-render.min.js integrity=sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI crossorigin=anonymous onload=renderMathInElement(document.body);></script><link rel=stylesheet type=text/css media=screen href=https://openwhisk.blog/css/custom.css><title>Nimbots: serverless virtual robots | OpenWhisk and friends</title></head><body><header><div id=avatar><a href=https://openwhisk.blog/><img src=/img/pagurus-cartoon.png alt="OpenWhisk and friends"></a></div><div id=titletext><h2 id=title><a href=https://openwhisk.blog/>OpenWhisk and friends</a></h2></div><div id=title-description><p id=subtitle><a href=https://linkedin.com/in/msciab>Michele Sciabarra</a> blog advocating <a href=http://openwhisk.apache.org/>Apache OpenWhisk</a>.</p><div id=social><nav><ul><li><a href=https://github.com/openwhisk-blog><i title=Github class="icons fab fa-github"></i></a></li><li><a href=/index.xml><i title=RSS class="icons fas fa-rss"></i></a></li></ul></nav></div></div><div id=mainmenu><nav><ul><li><a href=/>Home</a></li><li><a href=/post>All Posts</a></li><li><a href=/about>About</a></li><li><a href=/tags>Tags</a></li></ul></nav></div></header><main><div class=post><div class=author></div><div class=post-header><div class=meta><div class=date><span class=day>12</span>
+<span class=rest>Dec 2020</span></div></div><div class=matter><h1 class=title>Nimbots: serverless virtual robots</h1></div></div><div class=markdown><p><a href=https://nimbots-apigcp.nimbella.io/>FaasWars</a> is a programming game where you have to write the code that controls a robot fighting to death with another robot. The robot is a starship that can move in the space and shoot bullets. The goal of the game is to defeat the enemy robot, hitting it 5 times, and of course avoiding the bullets of the enemy.</p><p>To control a robot you have to write the control code. The control code itself is an OpenWhisk serverless action. In the following, there is a tutorial about how to write a progressively smarter control action.</p><p>We are using javascript as the programming language, as it is probably the more widely used and known. You can use however any other programming language available in Nimbella, like Python or Go. All the actions receive their input in JSON format and returns the output in JSON, too. So the logic described here in javascript can be readily translated in any other programming languages.</p><p>Let&rsquo;s start now, discussion how to create your robot control code with a step by step tutorial.</p><h2 id=how-to-control-your-robot>How to control your robot</h2><p>A serverless action suitable for Nimbots in its simplest form has this format:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>function main(args) {
+    return {&#34;body&#34;: []}
+}
+</code></pre></div><p>Any Nimbella action returns a map. In our case, we need a web action returning JSON, so you have to use <code>body</code> as a mandatory field of your object. The resulting answer has to be an array of maps. In the simplest case it is just an empty array. However if you implement this action way your robot will simply do nothing at all. Just sit down waiting to be hit by the enemy.</p><p>You can send commands to the robot. A command is a map, where the keys are the commands given to the robot and the values are the parameters of the command. For example you can order to the robot to &ldquo;yell&rdquo; something. If you want your robot displays the current time, you can order it with <code>{ "yell": new Date().toLocaleTimeString()}</code>. Let&rsquo;s put it in an entire action:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>function main(args) {
+    let msg = new Date().toLocaleTimeString()
+    return {&#34;body&#34;: [{&#34;yell&#34;:msg}]}
+}
+</code></pre></div><p>If you start the battle, you can see not the robot is telling the current time. As it is not doing anything else, it will not survive for very long if there is a minimally offensive other robot in the battleground. Indeed, this example is not very useful, battle-wise, but nonetheless we see our robot is doing something, now!</p><p>Let&rsquo;s learn how to move around our robot. As we already pointede out, the action returns an array of commands, so you can give multiple orders.</p><p>Out first step is to order to the robot to move forward and then turn to the left, as follows:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>function main(args) {
+    return {&#34;body&#34;: [
+       {&#34;move_forwards&#34;:50},
+       {&#34;turn_left&#34;:90},
+    ]}
+}
+</code></pre></div><p>If you run this code you will note the robot will move around, following a square path. Indeed the orders are to move forward 100 pixels and then turn right of 90 degrees, forever. If it is hit, it may change randomly its orientation.</p><h2 id=reacting-to-events>Reacting to events</h2><p>If you run the robot this way, is it blind and stupid, but it has not to be this way. Actually, the robot receives informations about its environment in the <code>args</code> parameter. The most important value to check is <code>args.event</code>. There are basically 4 events our robot can react to:</p><ul><li><code>idle</code>: when the robot is running out of commands and has nothing to do</li><li><code>enemy-spot</code>: when the robot sees the enemy right in front of the turret.</li><li><code>hit</code>: when an enemy bullet hits the robot</li><li><code>wall-collide</code>: when the robot hits the wall and cannot move forward any more</li></ul><p>Now lets add the ability to shot to the enemy when it sees one. For this purpose we instroduce a swich on the event. Also, we use an array where we push the actions we want to sent. Our revised code is thus:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>function main(args) {
+    let actions = []
+    switch(args.event) {
+        case &#34;idle&#34;:
+            actions.push({&#34;move_forwards&#34;:50})
+            actions.push({&#34;turn_left&#34;:90})
+            break;
+        case &#34;enemy-spot&#34;:
+            actions.push({&#34;yell&#34;: &#34;Fire!&#34;})
+            actions.push({&#34;shoot&#34;:true})
+            break;
+    }
+    return {&#34;body&#34;: actions}
+}
+</code></pre></div><p>Now, another detail. We say a command is wrapped in a map, but in a map there has not to be only one command. It can be multiple command at the same time. But those has to be be something the robot can do at the same time.</p><p>So for example a robot cannot move at the same time forward and backward, or move and turn. So the following actions are &ldquo;sequential&rdquo;, in the sense you can put only one at a time in the command maps:</p><ul><li><code>move_forwards &lt;number></code>: move forward of the given number of pixels</li><li><code>move_backwards &lt;number></code>: move backwards of the given number of pixels</li><li><code>move_opposide &lt;number></code>: move in the opposite direction, useful when you hit a wall</li><li><code>turn_left &lt;degrees></code>: turn the robot to the left of the given degrees</li><li><code>turn_right &lt;degrees></code>: turn the robot right of the given degrees</li></ul><p>However, you can order at the same time to yell and shot, for example. So this is a valid command: <code>{"yell": "Fire!", "shoot":true}</code>. Those are parallel actions.</p><p>In addition, you can also move the turret. This is thus the complete list of parallel actions:</p><ul><li><code>yell &lt;message></code> show a message</li><li><code>shot: true</code>: order to shot, if the value is true</li><li><code>turn_turret_left &lt;degrees></code>: turn the robot to the left of the given degrees</li><li><code>turn_turret_right &lt;degrees></code>: turn the robot to the right of the given degrees</li><li><code>data: &lt;object></code>: store the object and return it in every further event</li></ul><p>Now let&rsquo;s put all together, handling also the cases of the robot colliding with the wall or being hit. What it follows is he default control programm that is the default when you create a new robot.</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>function main(args){
+    let actions = []
+    switch(args.event) {
+        case &#34;idle&#34;:
+            actions.push({&#34;turn_turret_left&#34;: 45, &#34;move_forwards&#34;: 50})
+            actions.push({&#34;turn_left&#34;: 45})
+            break;
+        case &#34;wall-collide&#34;:
+            actions.push({&#34;move_opposide&#34;:10})
+            actions.push({&#34;turn_left&#34;:90})
+            break;
+        case &#34;hit&#34;:
+            actions.push({&#34;yell&#34;: &#34;Ooops!&#34;})
+            break
+        case &#34;enemy-spot&#34;:
+            actions.push({&#34;yell&#34;: &#34;Fire!&#34;, &#34;shoot&#34;:true})
+            break
+        default:
+            console.log(args)
+    }
+    return { &#34;body&#34;: actions}
+}
+</code></pre></div><h2 id=keeping-a-state>Keeping a state</h2><p>So far we developed a pretty dumb robot, that moves around a square and shoot when he sees the enemy. Lets try to make the robot a bit smarter, using also its ability to &ldquo;remember&rdquo; the current state and read more informations about the environment.</p><p>Before we continue, let&rsquo;s creating this skeleton of an action:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>function main(args){
+    let actions = []
+    switch(args.event) {
+        // insert here 
+        default: 
+           break;
+    }
+    return { &#34;body&#34;: actions}
+}
+</code></pre></div><p>In the following we only show pieced of code that handle single events, so you have to insert the snippets we are showing in the <code>// insert here</code> section. If we are, for example, showing a <code>case "idle"</code> you have to replace that case in the code.</p><h2 id=informations-about-yourself>Informations about yourself</h2><p>The <code>args</code> object does not include only the event as information. It actually includes a lot of informations about you and the enemy. Each request has this format:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>{
+  &#34;event&#34;: &#34;idle&#34;,
+  &#34;energy&#34;: 5,
+  &#34;x&#34;: 166,
+  &#34;y&#34;: 250,
+  &#34;angle&#34;: 124,
+  &#34;tank_angle&#34;: 206,
+  &#34;turret_angle&#34;: 277,
+  &#34;enemy_spot&#34;: {},
+  &#34;data&#34;: {}
+}
+</code></pre></div><p>So you know your position (<code>x</code> and <code>y</code>), the angle of the tank (<code>tank_agle</code>) and of the turret (<code>turrent_agle</code>); also you know the &ldquo;total&rdquo; <code>angle</code>, that is the sum of the angle of the tank and the turret. Basically, this is the angle of your bullets.</p><p>But that is not all, there are additional informations that are avalable in special cases: when you spot the enemy and you ask to preserve informations. To learn about that, let&rsquo;s learn first how to search for the enemy. The simplest way is to rotate the turret 360 degrees, with this code:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>case &#34;idle&#34;:
+   actions.push({&#34;turn_turret_left&#34;: 360})
+   break;
+</code></pre></div><p>Now, if you start the battle, enable <code>debug</code> and click the <code>Trace</code> button for a while, so you can intercept the event <code>enemy-spot</code>, that will happen at some point while you are rotating when the turret is aligned with the enemy. The <code>enemy-spot</code> event looks like this:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>{
+  &#34;event&#34;: &#34;enemy-spot&#34;,
+  &#34;energy&#34;: 5,
+  &#34;x&#34;: 166,
+  &#34;y&#34;: 250,
+  &#34;angle&#34;: 348,
+  &#34;tank_angle&#34;: 195,
+  &#34;turret_angle&#34;: 152,
+  &#34;enemy_spot&#34;: {
+    &#34;id&#34;: 1,
+    &#34;x&#34;: 368,
+    &#34;y&#34;: 201,
+    &#34;angle&#34;: 346,
+    &#34;distance&#34;: 207,
+    &#34;energy&#34;: 5
+  },
+  &#34;data&#34;: {}
+}
+</code></pre></div><h2 id=save-and-use-data>Save and use data</h2><p>The event in the previous example told you that there is an enemy at a distance of 207 pixels with angle of 347 degrees. What should we do then?</p><p>We can choose just to shoot, hoping to hit. However it is certanly better if we can remember where we saw the enemy and use this information to align the turret. So let&rsquo;s save the <code>angle</code>. We can do this with the <code>data</code> command, as follows:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback> case &#34;enemy-spot&#34;:
+    actions.push({&#34;data&#34;: { &#34;angle&#34;: args.enemy_spot.angle} })
+    break;
+</code></pre></div><p>Now that robot is preserving some informations, we can use it to align our turret to aim to the spotted enemy robot. In general, if our angle is greater than the angle of the enemy we want to move the turret to the left, otherwise to the right, and then shoot when we are aligned with theenemy.</p><p>Once shoot, we want want to forget about the angle we recorded until we see the enemy again. Also, we want to avoid to be an easy target to let&rsquo;s move when we are idle, and keep rotating the turret to spot the enemy. Putting all together in code, this means:</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>case &#34;idle&#34;:
+   let data = args.data
+   if(data.angle) {
+       let me = args.angle
+       let it = data.angle
+       if(me &gt; it) {
+           actions.push({&#34;turn_turret_left&#34;: me - it})
+       } else {
+           actions.push({&#34;turn_turret_right&#34;: it - me})
+       }
+       actions.push({ &#34;shoot&#34;: true, &#34;data&#34;: {}})
+   } else {
+        actions.push({&#34;move_forwards&#34;: 100, &#34;turn_turret_left&#34;: 360})
+        actions.push({&#34;turn_left&#34;: 30+150*Math.random() })
+   }
+   break;
+</code></pre></div><h2 id=final-touches>Final touches</h2><p>The robot is now pretty good, but it can be stuck when hits the wall, so we have to react. In our case, we are going to move in the opposite direction and then turning right of 90 degrees.</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>case &#34;wall-collide&#34;:
+    actions.push({&#34;move_opposide&#34;:10})
+    actions.push({&#34;turn_left&#34;:90})
+    break;
+</code></pre></div><p>Also, when we are hit, better to move away to avoid multiple bullets. Our choice is hence to move backwards of a random amount, to get ourself to safety, away of the enemy fire.</p><div class=highlight><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>case &#34;hit&#34;:
+    actions.push({&#34;move_backwards&#34;: 10+90*Math.random()})
+    break;
+</code></pre></div><h2 id=conclusion>Conclusion</h2><p>We have just explored the surface. Now you know the basics, how to move, spot enemy, keep a state and aim. But is this enough? Can you devise more sophisticated strategies? Can you take in account the distance and the velocity of the enemy? Can you anticipate its moves? Can you think of better ways to move away from the bullets? As you can see the possibilities are endless and you are welcome to write the smartest and strongest robot around. And win our FAAS Wars competition.</p></div><div class=tags><div class=taxosfloating_left><p>Tags</p></div><div class=termsfloating_right><p><a href=/tags/tech/>tech</a></div><div class=clearit></div></div></div></div></main><footer>© Copyright <a href=https://www.linkedin.com/in/msciab>Michele Sciabarrà</a> | Book <a href=https://www.oreilly.com/library/view/learning-apache-openwhisk/9781492046158/>Learning Apache OpenWhisk</a> published by <a href=https://www.oreilly.com/>O&rsquo;Reilly</a><div><b>Disclaimer</b>: opinions expressed are solely my own and do not express<br>the views or opinions of the <a href=https://www.apache.org>Apache Software Foundation</a>.</div></footer></body></html>

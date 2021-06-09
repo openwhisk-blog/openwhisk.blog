@@ -1,0 +1,9 @@
+# Demo GO
+
+docker run -p 8080:8080 -ti \
+openwhisk/action-golang-v1.12
+
+# In another terminal
+
+python invoke.py init hello.go
+python invoke.py run '{"name":"Mike"}'

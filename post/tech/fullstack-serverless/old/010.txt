@@ -1,0 +1,6 @@
+nim project create whisk-fullstack
+cd whisk-fullstack/
+npx degit sveltejs/template web
+cd web
+npm install
+cd ..
